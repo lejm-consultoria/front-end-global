@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.titulo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 112px;
+    background-color: #A9CDEB;
+    color: #3B427D;
+}
+#imagem-header{
+    position: absolute;
+    left: 20px; 
+    width: 110px;
+    height: 100px;
+}
+#btn-titulo{
+    position: absolute;
+    margin-top: 60px;
+    color: #3B427D;
+    background-color: #A9CDEB;
+    border-color: #6d8192;
+}
+#btn-titulo:hover{
+    background-color: #7077b6;
+    color: black;
+}
+
+.header-geral{
+    padding: 40px;
+    color: white;
+}
+#primeira-tarefa{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 299px;
+    width: 681px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../assets/enchentes-sao-paulo-conexao-planeta.jpg');
+    border-radius: 30px;
+
+}
+
+#primeira-tarefa h2{
+    color: #80AED2;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+#primeira-tarefa p{
+    padding: 20px;
+}
