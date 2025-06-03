@@ -34,6 +34,11 @@
     padding: 40px;
     color: white;
 }
+#main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 #primeira-tarefa{
     display: flex;
     flex-direction: column;
@@ -140,14 +145,19 @@
 }
 
 #quinta-tarefa h2{
+    position: absolute;
     color: #80AED2;
+    margin-right: 100px;
     padding-top: 10px;
     padding-bottom: 20px;
 }
 
-#quinta-tarefa p{
-    padding: 20px;
-    align-items: center;
+#paragrafo-quinta-tarefa{
+    position: absolute;
+    margin-top: 50px;
+    margin-right: 100px;
+    height: 200px;
+    width: 300px;
 }
 #sexta-tarefa{
     display: flex;
@@ -169,21 +179,24 @@
 
 }
 
-#sexta-tarefa p{
-    padding: 20px;
-    align-items: center;
+#paragrafo-sexta-tarefa{
+    position: absolute;
+    margin-top: 50px;
+    margin-right: 100px;
+    height: 200px;
+    width: 300px;
 }
 #img{
-    width: 120px;
-    height: 160px;
-    margin-left: 103%;
-    border-radius: 20px;
-    margin-top: -100px;
+    position: absolute;
+    width: 200px;
+    height: 180px;
+    margin-left: 400px;
+    margin-top: 50px;
 }
 #img2{
-    width: 120px;
-    height: 160px;
-    margin-left: 100%;
-    border-radius: 20px;
-    margin-top: -100px;
+    position: absolute;
+    width: 200px;
+    height: 180px;
+    margin-left: 400px;
+    margin-top: 70px;
 }
