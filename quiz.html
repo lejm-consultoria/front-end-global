@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Foylabo – Teste Seu Conhecimento</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="src/css/style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="brand">
+        <img src="src/assets/logo-transparent.png" alt="Logo Foylabo" class="logo" />
+        <span class="logo-text">Foylabo</span>
+      </div>
+      <button class="hamburger" id="hamburger-btn-quiz">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links-quiz">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="quiz.html" class="active">Quiz</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="quiz-container">
+    <h1>Quiz: Entenda as Enchentes e Soluções</h1>
+    <div id="quiz-box">
+      <!-- AQUI O JAVASCRIPT INSERE AS PERGUNTAS DINAMICAMENTE -->
+      <div id="progress-bar">
+        <div id="progress"></div>
+      </div>
+      <div id="question-container">
+        <p id="question-text"></p>
+      </div>
+      <div id="answers-container"></div>
+      <button id="next-btn" class="btn-secondary">Próxima</button>
+    </div>
+    <div id="result-box" class="hidden">
+      <h2>Seu Resultado</h2>
+      <p id="score-text"></p>
+      <button id="retry-btn" class="btn-secondary">Refazer Quiz</button>
+      <p class="result-msg" id="result-msg"></p>
+      <a href="sobre.html" class="btn-primary">Saiba Mais Sobre o Projeto</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 Foylabo.</p>
+    </div>
+  </footer>
+
+  <script src="src/js/script.js"></script>
+</body>
+</html>
