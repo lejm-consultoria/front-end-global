@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0a3d62;
+  padding: 10px 20px;
+  color: white;
+}
+
+.logo {
+  font-size: 1.5em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #0a3d62;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    padding: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+.conteudo {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slideshow-container {
+  max-width: 700px;
+  position: relative;
+}
+
+.tarefa {
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../assets/enchentes-sao-paulo-conexao-planeta.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  padding: 30px;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.tarefa.active {
+  display: flex;
+}
+
+.tarefa h2 {
+  color: #80AED2;
+  margin-bottom: 20px;
+}
+
+.tarefa p, .tarefa ul {
+  margin: 10px 0;
+}
+
+.tarefa ul {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.imagem {
+  margin-top: 20px;
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+}
+
+.seta.esquerda {
+  left: 10px;
+}
+
+.seta.direita {
+  right: 10px;
+}
+
+footer {
+  background-color: #0a3d62;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
