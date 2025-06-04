@@ -1,226 +1,481 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+/* Reset CSS básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    background-color: #ffffff;
+
+:root {
+  --cor-preto: #0d0d0d;
+  --cor-cinza-claro: #e5e5e5;
+  --cor-verde-menta: #a3d9a5;
+  --cor-azul-sereno: #6cb4ee;
+  --fonte-principal: 'Poppins', sans-serif;
 }
-header{
-    background-color: #A9CDEB;
+
+/* Estilos de fonte e corpo */
+body {
+  font-family: var(--fonte-principal);
+  background-color: #ffffff;
+  color: var(--cor-preto);
+  line-height: 1.6;
 }
+
+/* HEADER e NAVEGAÇÃO */
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--cor-cinza-claro);
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0a3d62;
-  padding: 10px 20px;
-  color: white;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
 }
-.logo {
-    display: flex;
-    justify-content: center;
-    font-size: 1.5em;
-}
-.nav-links {
+
+.brand {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  align-items: center;
 }
-.nav-links a {
-  color: #000000;
+
+.logo {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.logo-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--cor-preto);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a {
   text-decoration: none;
-  font-weight: bold;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--cor-preto);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
 }
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  background-color: var(--cor-verde-menta);
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
 .hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
   width: 24px;
-  font-size: 24px;
+  height: 18px;
+  background: none;
+  border: none;
   cursor: pointer;
 }
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  background-color: var(--cor-preto);
+  border-radius: 1px;
+}
+
+/* MAIN – ESTILOS GERAIS */
+main {
+  margin-top: 68px; /* Para compensar o header fixo */
+}
+
+/* BOTÕES */
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--fonte-principal);
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: var(--cor-verde-menta);
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--cor-azul-sereno);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--cor-preto);
+  border: 2px solid var(--cor-preto);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.btn-secondary:hover {
+  background-color: var(--cor-preto);
+  color: #ffffff;
+}
+
+/* SEÇÃO HERO */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--cor-cinza-claro);
+  padding: 4rem 1rem;
+}
+
+.hero-content {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--cor-preto);
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: var(--cor-preto);
+}
+
+.hero-image {
+  flex: 1 1 300px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* SEÇÕES DE CONTEÚDO */
+.content-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1150px;
+  margin: 3rem auto;
+  gap: 2rem;
+}
+
+.content-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.section-image,
+.section-text {
+  flex: 1 1 300px;
+}
+
+.section-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.section-text h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--cor-preto);
+}
+
+.section-text p {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: var(--cor-preto);
+}
+
+/* QUIZ CONTAINER */
+.quiz-container {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 1rem;
+}
+
+#quiz-box {
+  background-color: var(--cor-cinza-claro);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#quiz-box.hidden {
+  display: none;
+}
+
+#result-box {
+  max-width: 500px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+#result-box.hidden {
+  display: none;
+}
+
+#progress-bar {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+#progress {
+  height: 8px;
+  width: 0%;
+  background-color: var(--cor-verde-menta);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+#question-container {
+  margin-bottom: 1rem;
+}
+
+#question-text {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+#answers-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.answer-btn {
+  background-color: #fff;
+  border: 2px solid var(--cor-preto);
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.answer-btn:hover {
+  background-color: var(--cor-verde-menta);
+  color: #fff;
+}
+
+.answer-btn.selected {
+  background-color: var(--cor-azul-sereno);
+  color: #fff;
+  border-color: var(--cor-azul-sereno);
+}
+
+/* CONTATO */
+.contact-container {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 1rem;
+}
+
+.contact-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.65rem;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-family: var(--fonte-principal);
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--cor-azul-sereno);
+}
+
+.error-msg {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.success-msg {
+  color: green;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* SOBRE e BLOG (container geral) */
+.about-container,
+.blog-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 1rem;
+}
+
+.about-container h1,
+.blog-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.about-text {
+  margin-bottom: 2rem;
+}
+
+.about-text h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-text p {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.post {
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
+}
+
+.post h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.post p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.read-more {
+  color: var(--cor-azul-sereno);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* RODAPÉ */
+footer {
+  background-color: var(--cor-cinza-claro);
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+.footer-content {
+  max-width: 1150px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content p {
+  font-size: 0.9rem;
+  color: var(--cor-preto);
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: var(--cor-preto);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
-    background-color: #A9CDEB;
-    position: absolute;
-    top: 30px;
-    right: 0px;
-    padding: 5px;
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    background-color: var(--cor-cinza-claro);
+    height: calc(100% - 60px);
+    width: 200px;
+    flex-direction: column;
+    padding-top: 1rem;
+    transition: right 0.3s ease;
   }
-  .nav-links.active {
-    display: flex;
+  .nav-links.open {
+    right: 0;
   }
   .hamburger {
-    display: block;
+    display: flex;
   }
-}
-.conteudo{
-    padding: 40px;
-    color: rgb(255, 255, 255);
-}
-#main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#primeira-tarefa{
-    display: flex;
+  .content-section {
     flex-direction: column;
     text-align: center;
-    height: 299px;
-    width: 681px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../assets/enchentes-sao-paulo-conexao-planeta.jpg');
-    border-radius: 30px;
-    align-items: center;
-    padding: 30px;
-}
-
-#primeira-tarefa h2{
-    color: #80AED2;
-    padding-top: 10px;
-    padding-bottom: 20px;
-}
-
-#primeira-tarefa p{
-    padding: 20px;
-    align-items: center;
-}
-#segunda-tarefa{
-    display: flex;
+  }
+  .content-section.reverse {
     flex-direction: column;
-    text-align: center;
-    height: 299px;
-    width: 681px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../assets/enchentes-sao-paulo-conexao-planeta.jpg');
-    border-radius: 30px;
-    align-items: center;
-    margin-top: 40px;
-    padding: 30px;
-}
-
-#segunda-tarefa h2{
-    color: #80AED2;
-    padding-top: 10px;
-    padding-bottom: 20px;
-}
-
-#segunda-tarefa p{
-    padding: 20px;
-    align-items: center;
-}
-
-#terceira-tarefa{
-    display: flex;
+  }
+  .content-section .section-image,
+  .content-section .section-text {
+    flex: 1 1 100%;
+  }
+  .hero {
     flex-direction: column;
+  }
+  .hero-image,
+  .hero-content {
+    flex: 1 1 100%;
     text-align: center;
-    height: 299px;
-    width: 681px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../assets/enchentes-sao-paulo-conexao-planeta.jpg');
-    border-radius: 30px;
-    align-items: center;
-    margin-top: 40px;
-    padding: 30px;
-}
-
-#terceira-tarefa h2{
-    color: #80AED2;
-    padding-top: 10px;
-    padding-bottom: 20px;
-}
-
-#terceira-tarefa p{
-    padding: 20px;
-    align-items: center;
-}
-#quarta-tarefa{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    height: 299px;
-    width: 681px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../assets/enchentes-sao-paulo-conexao-planeta.jpg');
-    border-radius: 30px;
-    align-items: center;
-    margin-top: 40px;
-    padding: 30px;
-}
-
-#quarta-tarefa h2{
-    color: #80AED2;
-    padding-top: 10px;
-    padding-bottom: 20px;
-}
-
-#quarta-tarefa p{
-    padding: 20px;
-    align-items: center;
-}
-#quinta-tarefa{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    height: 299px;
-    width: 681px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../assets/enchentes-sao-paulo-conexao-planeta.jpg');
-    border-radius: 30px;
-    align-items: center;
-    margin-top: 40px;
-    padding: 30px;
-}
-
-#quinta-tarefa h2{
-    position: absolute;
-    color: #80AED2;
-    margin-right: 100px;
-    padding-top: 10px;
-    padding-bottom: 20px;
-}
-
-#paragrafo-quinta-tarefa{
-    position: absolute;
-    margin-top: 50px;
-    margin-right: 100px;
-    height: 200px;
-    width: 300px;
-}
-#sexta-tarefa{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    height: 299px;
-    width: 681px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../assets/enchentes-sao-paulo-conexao-planeta.jpg');
-    border-radius: 30px;
-    align-items: center;
-    margin-top: 40px;
-    padding: 30px;
-}
-
-#sexta-tarefa h2{
-    color: #80AED2;
-    padding-top: 10px;
-    padding-bottom: 20px;
-
-}
-
-#paragrafo-sexta-tarefa{
-    position: absolute;
-    margin-top: 50px;
-    margin-right: 100px;
-    height: 200px;
-    width: 300px;
-}
-#img{
-    position: absolute;
-    width: 200px;
-    height: 180px;
-    margin-left: 400px;
-    margin-top: 50px;
-}
-#img2{
-    position: absolute;
-    width: 200px;
-    height: 180px;
-    margin-left: 400px;
-    margin-top: 70px;
+  }
 }
