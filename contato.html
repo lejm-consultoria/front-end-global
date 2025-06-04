@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato – Foylabo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="src/css/style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="brand">
+        <img src="src/assets/logo-transparent.png" alt="Logo Foylabo" class="logo" />
+        <span class="logo-text">Foylabo</span>
+      </div>
+      <button class="hamburger" id="hamburger-btn-contato">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links-contato">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contato.html" class="active">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contact-container">
+    <h1>Entre em Contato Com a Foylabo</h1>
+    <form id="contact-form" novalidate>
+      <div class="form-group">
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" name="nome" required minlength="3" />
+        <small class="error-msg" id="error-nome"></small>
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required />
+        <small class="error-msg" id="error-email"></small>
+      </div>
+      <div class="form-group">
+        <label for="telefone">Telefone (somente números)</label>
+        <input type="tel" id="telefone" name="telefone" required pattern="^\d{10,11}$" />
+        <small class="error-msg" id="error-telefone"></small>
+      </div>
+      <div class="form-group">
+        <label for="interesse">Selecione Seu Perfil</label>
+        <select id="interesse" name="interesse" required>
+          <option value="">-- Escolha uma Opção --</option>
+          <option value="investidor">Sou Investidor</option>
+          <option value="gestor">Sou Gestor Público</option>
+          <option value="estudante">Sou Estudante/Pesquisador</option>
+          <option value="outro">Outro</option>
+        </select>
+        <small class="error-msg" id="error-interesse"></small>
+      </div>
+      <div class="form-group">
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" rows="4" required minlength="10"></textarea>
+        <small class="error-msg" id="error-mensagem"></small>
+      </div>
+      <button type="submit" class="btn-primary">Enviar Mensagem</button>
+      <p id="form-success" class="success-msg hidden">Obrigado pelo contato! Em breve retornaremos.</p>
+    </form>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 Foylabo.</p>
+    </div>
+  </footer>
+
+  <script src="src/js/script.js"></script>
+</body>
+</html>
