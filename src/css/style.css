@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: #969ee2;
+}
 .titulo{
     display: flex;
     justify-content: space-between;
